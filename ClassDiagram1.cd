@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HRManagement.entity.Address">
+    <Position X="13" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAEIAAAABAAIAAAAAAAA=</HashCode>
+      <FileName>entity\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HRManagement.entity.Department">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAABAAAAAAAAQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>entity\Department.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HRManagement.entity.Employee">
+    <Position X="11" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAQAAAAEAIAAAACAQAAQEEIAAAACAAAAAQAAggE=</HashCode>
+      <FileName>entity\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HRManagement.entity.Manager">
+    <Position X="12.25" Y="4.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="HRManagement.entity.Employee" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.875" Y="3.711" />
+        <Point X="11.875" Y="4.336" />
+        <Point X="13.167" Y="4.336" />
+        <Point X="13.167" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQQAAAAEAAAABAAEAADAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>entity\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HRManagement.entity.Task">
+    <Position X="15.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIBAAEgAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>entity\Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HRManagement.entity.Worker">
+    <Position X="9.5" Y="4.25" Width="2" />
+    <InheritanceLine Type="HRManagement.entity.Employee" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.875" Y="3.711" />
+        <Point X="11.875" Y="4.367" />
+        <Point X="11.387" Y="4.367" />
+        <Point X="11.387" Y="4.375" />
+        <Point X="11.5" Y="4.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>entity\Worker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HRManagement.service.DepartmentService" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAEIAMAAAQAAAAAAAAA=</HashCode>
+      <FileName>service\DepartmentService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.603" Collapsed="true" />
+  </Class>
+  <Class Name="HRManagement.service.ManagerService" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAEIAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\ManagerService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.169" Collapsed="true" />
+  </Class>
+  <Class Name="HRManagement.service.TaskService" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEIAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\TaskService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.864" Collapsed="true" />
+  </Class>
+  <Class Name="HRManagement.service.WorkerService" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAEIAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\WorkerService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HRManagement.DB_Simulation.OnMemoryDataBase">
+    <Position X="16.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAIAAAgAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>DB-Simulation\OnMemoryDataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="HRManagement.service.IDepartmentService">
+    <Position X="6.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAQAAAAAAAAA=</HashCode>
+      <FileName>service\api\IDepartmentService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HRManagement.service.IEmployeeService&lt;T&gt;">
+    <Position X="1.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\api\IEmployeeService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HRManagement.service.IService&lt;T&gt;">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEIAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\api\IService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HRManagement.service.api.ITaskService">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\api\ITaskService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="HRManagement.entity.Rank">
+    <Position X="14.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAIAAAAA=</HashCode>
+      <FileName>entity\Rank.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Calibri" Size="10" />
+</ClassDiagram>
