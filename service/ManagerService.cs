@@ -1,33 +1,55 @@
-﻿using HRManagement.entity;
+﻿using HRManagement.DB_Simulation;
+using HRManagement.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace HRManagement.service
 {
     class ManagerService : IEmployeeService<Manager>
     {
-        public void AssignTaskToWorker(int workerId, int taskId)
+
+        public Manager Create(Manager manager)
         {
-            throw new NotImplementedException();
+            OnMemoryDataBase.employees.Add(manager.Id, manager);
+            Console.WriteLine($"{manager.FullName} Manager olarak atandı");
+            return manager;
         }
 
-        public Manager Create(Manager t)
+        public Manager Delete(int managerId)
         {
-            Console.WriteLine($"{t.FullName} Manager olarak atandı");
-            return t;
+            Manager manager = Find(managerId);
+            OnMemoryDataBase.employees.Remove(managerId);
+            return manager;
         }
 
-        public Manager Delete(int id)
+        public Manager Find(int managerId)
         {
-            throw new NotImplementedException();
+            Manager manager;
+            if (OnMemoryDataBase.employees[managerId] is Manager)
+            {
+                manager = (Manager)OnMemoryDataBase.employees[managerId];
+            }
+            else
+            {
+                throw new NotImplementedException("Class Cast Exception. Error!!");
+            }
+            return manager;
         }
-
-        public Manager Find(int id)
+        public bool AssignTaskToWorker(int workerId, int taskId)
         {
-            throw new NotImplementedException();
+
+            Worker worker = (Worker)OnMemoryDataBase.employees[workerId];
+            Task task = OnMemoryDataBase.tasks[taskId];
+            if (task == null || worker == null)
+            {
+                return false;
+            }
+            worker.Assign(task);
+            task.AssignWorker(worker);
+
+            return false;
         }
     }
 }

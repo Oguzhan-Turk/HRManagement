@@ -11,6 +11,6 @@ namespace HRManagement.service
     {
         List<Department> GetAllDepartments();
         Department GetDepartmentByEmployeeId(int employeeId);
-        bool SetManagerOfDepartment(Manager manager);
+        bool SetManagerOfDepartment(int departmentId, int managerId);
     }
 }

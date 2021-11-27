@@ -49,6 +49,7 @@ namespace HRManagement
                 Console.WriteLine(item.DeadLine);
             }
 
+            workerService.AssignTaskToWorker(55, task.Id);
 
         }
 

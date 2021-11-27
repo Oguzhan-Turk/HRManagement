@@ -1,4 +1,5 @@
-﻿using HRManagement.entity;
+﻿using HRManagement.DB_Simulation;
+using HRManagement.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,35 +10,55 @@ namespace HRManagement.service
 {
     class DepartmentService : IDepartmentService
     {
-        public Department Create(Department t)
+        public Department Create(Department department)
         {
-            Console.WriteLine($"{t.Name} Departmanı oluşturuldu");
-            return t;
+
+            OnMemoryDataBase.departments.Add(department.Id, department);
+            return department;
         }
 
         public Department Delete(int id)
         {
-            throw new NotImplementedException();
+            Department department = Find(id);
+            OnMemoryDataBase.departments.Remove(id);
+            return department;
         }
 
         public Department Find(int id)
         {
-            throw new NotImplementedException();
+            Department department = OnMemoryDataBase.departments[id];
+            return department;
+
         }
 
         public List<Department> GetAllDepartments()
         {
-            throw new NotImplementedException();
+            List<Department> allDepartments = new List<Department>();
+
+            foreach (var item in OnMemoryDataBase.departments)
+            {
+                allDepartments.Add(item.Value);
+            }
+            return allDepartments;
         }
 
         public Department GetDepartmentByEmployeeId(int employeeId)
         {
-            throw new NotImplementedException();
+            Employee employee = OnMemoryDataBase.employees[employeeId];
+            Department department = employee.Department;
+            return department;
         }
 
-        public bool SetManagerOfDepartment(Manager manager)
+        public bool SetManagerOfDepartment(int departmentId, int managerId)
         {
-            throw new NotImplementedException();
+            Department department = OnMemoryDataBase.departments[departmentId];
+            Manager manager = (Manager)OnMemoryDataBase.employees[managerId];
+            if ((manager == null || department == null))
+            {
+                return false;
+            }
+            department.HeadOf = manager;
+            return true;
         }
     }
 }

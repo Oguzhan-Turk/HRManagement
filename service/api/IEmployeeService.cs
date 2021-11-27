@@ -9,7 +9,7 @@ namespace HRManagement.service
     interface IEmployeeService<T>: IService<T> where T : Employee 
     {
       
-        void AssignTaskToWorker(int workerId, int taskId);
+        bool AssignTaskToWorker(int workerId, int taskId);
 
     }
 }

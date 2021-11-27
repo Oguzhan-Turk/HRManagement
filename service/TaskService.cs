@@ -10,10 +10,10 @@ namespace HRManagement.service
 {
     class TaskService : ITaskService
     {
-        public Task Create(Task t)
+        public Task Create(Task task)
         {
-            OnMemoryDataBase.tasks.Add(t.Id, t);
-            return t;
+            OnMemoryDataBase.tasks.Add(task.Id, task);
+            return task;
         }
 
         public Task Delete(int id)
@@ -27,6 +27,18 @@ namespace HRManagement.service
         {
             Task task = OnMemoryDataBase.tasks[id];
             return task;
+        }
+        public bool AssingWorkerToTask(int taskId, int workerId)
+        {
+            Task task = Find(taskId);
+            Worker worker = (Worker)OnMemoryDataBase.employees[workerId];
+            if (task == null || worker == null)
+            {
+                return false;
+            }
+            worker.Assign(task);
+            task.AssignWorker(worker);
+            return true;
         }
     }
 }

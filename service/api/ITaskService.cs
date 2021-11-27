@@ -8,7 +8,7 @@ namespace HRManagement.service.api
 {
     interface ITaskService:IService<Task>
     {
-
+        public bool AssingWorkerToTask(int taskId, int workerId);
 
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oguzh\\source\\repos\\HRManagement\\HRManagement.csproj": {}
+    "C:\\Users\\oguzh\\Documents\\HRManagement\\HRManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oguzh\\source\\repos\\HRManagement\\HRManagement.csproj": {
+    "C:\\Users\\oguzh\\Documents\\HRManagement\\HRManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oguzh\\source\\repos\\HRManagement\\HRManagement.csproj",
+        "projectUniqueName": "C:\\Users\\oguzh\\Documents\\HRManagement\\HRManagement.csproj",
         "projectName": "HRManagement",
-        "projectPath": "C:\\Users\\oguzh\\source\\repos\\HRManagement\\HRManagement.csproj",
+        "projectPath": "C:\\Users\\oguzh\\Documents\\HRManagement\\HRManagement.csproj",
         "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oguzh\\source\\repos\\HRManagement\\obj\\",
+        "outputPath": "C:\\Users\\oguzh\\Documents\\HRManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
