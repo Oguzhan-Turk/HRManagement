@@ -52,13 +52,22 @@ namespace HRManagement.service
         public bool SetManagerOfDepartment(int departmentId, int managerId)
         {
             Department department = OnMemoryDataBase.departments[departmentId];
-            Manager manager = (Manager)OnMemoryDataBase.employees[managerId];
-            if ((manager == null || department == null))
+            Employee employee = OnMemoryDataBase.employees[managerId];
+            if (employee == null || department == null)
             {
                 return false;
             }
-            department.HeadOf = manager;
-            return true;
+            if (OnMemoryDataBase.employees[managerId] is Manager)
+            {
+                Manager manager = (Manager)OnMemoryDataBase.employees[managerId];
+                department.HeadOf = manager;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Class Cast Exception. Error!!");
+                return false;
+            }
         }
     }
 }

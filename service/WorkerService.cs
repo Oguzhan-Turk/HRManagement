@@ -40,24 +40,25 @@ namespace HRManagement.service
         }
         public bool AssignTaskToWorker(int workerId, int taskId)
         {
-            Worker worker;
+            Employee employee = OnMemoryDataBase.employees[workerId];
             Task task = OnMemoryDataBase.tasks[taskId];
+            Worker worker;
+            if (employee == null || task == null)
+            {
+                return false;
+            }
             if (OnMemoryDataBase.employees[workerId] is Worker)
             {
                 worker = (Worker)OnMemoryDataBase.employees[workerId];
-                //if (worker == null || task == null )
-                //{
-                //    return false;
-                //}
+                worker.Assign(task);
+                task.AssignWorker(worker);
+                return true;
             }
             else
             {
                 Console.WriteLine("Class Cast Exception. Error!!");
                 return false;
             }
-            worker.Assign(task);
-            task.AssignWorker(worker);
-                return true;
         }
 
 
